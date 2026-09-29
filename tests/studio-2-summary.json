@@ -1,0 +1,12 @@
+{
+  "edition": "Studio 02",
+  "passed": 53,
+  "uncaughtJavascriptErrors": [],
+  "browser": "Chromium via Playwright",
+  "viewportWidths": [320, 390, 768, 1024, 1440],
+  "themes": ["dark", "light"],
+  "demos": ["agenda", "magicdev", "pickside", "mapa", "beto", "wallet"],
+  "checks": ["vector rig", "wave", "thumbs up", "wink", "theme transitions", "canvas pause", "booking conflicts", "approval queue", "cancellation", "vote uniqueness", "simulated payment confirmation", "questionnaire chart", "idempotent virtual points", "Wallet preview and JSON", "HTML escaping", "engineer normal/retry/duplicate flows on six demos", "decisions", "keyboard tabs", "dialog focus restoration", "reduced motion", "responsive overflow", "mobile menu", "localStorage unavailable", "cleanup on unmount", "no product API requests"],
+  "method": "Actual CSS and JavaScript inlined in a local test document. External CDN requests intentionally blocked.",
+  "limitations": ["Full external-library execution not end-to-end tested", "Real-origin preference persistence not end-to-end tested", "No physical-device, Safari or Firefox test", "No production Wallet API call", "Not a full security, performance or WCAG audit"]
+}
