@@ -1,0 +1,24 @@
+# Local dependencies and test outputs
+node_modules/
+playwright-report/
+test-results/
+__pycache__/
+# Credentials must never be published
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*service-account*.json
+credentials*.json
+secrets/
+# Local databases, browser profiles and build artifacts
+*.db
+*.sqlite
+*.sqlite3
+.chrome-profile/
+**/bin/
+**/obj/
+.DS_Store
