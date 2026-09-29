@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Google Wallet lab by Beto Delazane — Generic Pass, JWT and Node.js." />
+  <title>Google Wallet Lab — Beto Delazane</title>
+  <style>
+    :root { --bg:#0a0a0a; --surface:#111; --text:#f4f4f2; --muted:#9c9c98; --line:#292929; --accent:#f4f4f2; }
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:"Helvetica Neue",Arial,sans-serif}
+    a{color:inherit;text-decoration:none}.shell{width:min(1120px,calc(100% - 36px));margin:auto}.top{min-height:70px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .brand{font-weight:650;letter-spacing:-.02em}.back{color:var(--muted);font-size:13px}.hero{padding:86px 0 70px;border-bottom:1px solid var(--line)}
+    .eyebrow{color:var(--muted);font-size:10px;letter-spacing:.13em}.hero h1{font-size:clamp(58px,10vw,128px);line-height:.84;letter-spacing:-.07em;margin:22px 0 28px}
+    .hero p{max-width:680px;color:var(--muted);font-size:20px;line-height:1.55}.grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:54px;padding:74px 0;border-bottom:1px solid var(--line)}
+    h2{font-size:clamp(34px,5vw,62px);line-height:.96;letter-spacing:-.05em;margin:0}.copy p,.steps p{color:var(--muted);line-height:1.6}.steps{border-top:1px solid var(--line)}
+    .step{display:grid;grid-template-columns:38px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}.step span{color:var(--muted);font-size:11px}.step strong{font-weight:600}.step p{margin:6px 0 0}
+    pre{background:#050505;border:1px solid var(--line);padding:18px;overflow:auto;color:#ddd;line-height:1.65}.links{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px}.links a{border-bottom:1px solid var(--line);padding-bottom:5px;font-size:13px}
+    footer{padding:32px 0 52px;color:var(--muted);font-size:11px}.notice{padding:15px;border:1px solid var(--line);margin-top:24px;color:var(--muted);font-size:13px}
+    @media(max-width:760px){.grid{grid-template-columns:1fr}.hero{padding-top:62px}}
+  </style>
+</head>
+<body>
+  <header class="top shell">
+    <a class="brand" href="../">Beto Delazane</a>
+    <a class="back" href="../">← Portfolio</a>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <span class="eyebrow">PUBLIC LAB / GOOGLE WALLET</span>
+      <h1>Generic<br />Pass.</h1>
+      <p>
+        Referência prática para gerar um passe no backend, assinar um JWT com uma Service Account
+        e abrir o fluxo oficial “Add to Google Wallet” sem expor credenciais no navegador.
+      </p>
+      <div class="links">
+        <a href="./README.md">README técnico ↗</a>
+        <a href="./example/">Abrir exemplo ↗</a>
+        <a href="https://developers.google.com/wallet" target="_blank" rel="noreferrer">Docs oficiais ↗</a>
+      </div>
+    </section>
+
+    <section class="grid shell">
+      <div class="copy">
+        <span class="eyebrow">ARCHITECTURE</span>
+        <h2>Segredo no servidor. Fluxo no browser.</h2>
+        <p>
+          O browser pede uma Save URL. O backend monta Class + Object, assina o JWT com RS256
+          e retorna apenas o link final. A chave privada nunca atravessa a fronteira do servidor.
+        </p>
+      </div>
+
+      <div class="steps">
+        <div class="step"><span>01</span><div><strong>Issuer</strong><p>Crie ou use um Issuer no Google Wallet Business Console.</p></div></div>
+        <div class="step"><span>02</span><div><strong>Service Account</strong><p>Ative a Wallet API e autorize a Service Account no Issuer.</p></div></div>
+        <div class="step"><span>03</span><div><strong>JWT</strong><p>O backend assina o payload com a private key da Service Account.</p></div></div>
+        <div class="step"><span>04</span><div><strong>Save URL</strong><p>O usuário abre o link oficial e confirma o passe no Google Wallet.</p></div></div>
+      </div>
+    </section>
+
+    <section class="grid shell">
+      <div class="copy">
+        <span class="eyebrow">LOCAL SETUP</span>
+        <h2>Rodar em poucos minutos.</h2>
+      </div>
+      <div>
+        <pre>cd google-wallet/example
+npm install
+cp .env.example .env
+
+# configure:
+# GOOGLE_APPLICATION_CREDENTIALS
+# GOOGLE_WALLET_ISSUER_ID
+
+npm start
+# http://localhost:8080</pre>
+        <div class="notice">
+          O exemplo público não contém Issuer real, chave privada, Client Secret, Service Account,
+          token ou qualquer outro dado sensível.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">Beto Delazane · Senior Software Engineer · Google Wallet public lab</footer>
+</body>
+</html>
