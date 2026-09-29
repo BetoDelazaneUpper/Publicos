@@ -1,36 +1,58 @@
-# Beto Delazane — edição em movimento
+# Studio 02 — movimento com propósito
 
-A página principal usa a ilustração fornecida pelo titular do portfólio. O personagem é uma composição SVG: recortes da mesma imagem para cabeça, corpo e braços, com pivôs independentes. Não é um vídeo nem um novo retrato gerado. A imagem WebP não contém credenciais ou metadados de localização.
+## Personagem
 
-## Interações
+A edição anterior usava recortes raster. Esta usa um desenho SVG com formas independentes: cabeça, cabelo, olhos, óculos, braços, mãos e corpo. Ele mantém características visuais da ilustração fornecida por Beto; não é um novo retrato fotográfico.
 
-- Aceno inicial, movimento leve do corpo e da cabeça; clique no personagem ou em **Dê um oi** para acenar novamente.
-- Superfície de aparência líquida/metálica em Canvas 2D, com contornos procedurais, deformação por ponteiro e ondas ao toque. É um efeito visual, não uma simulação física de fluidos.
-- GSAP 3.13.0 + ScrollTrigger para entrada tipográfica, revelação de seções, paralaxe e botões magnéticos.
-- Lenis 1.3.11 para rolagem suave em dispositivos com mouse; o toque mantém a rolagem nativa.
-- Faixa tipográfica em movimento, órbitas, diagrama de arquitetura animado, seleção de projetos, acordeões e demonstração visual do fluxo Wallet.
-- Tema escuro preto/cinza/branco e tema claro branco/cinza/azul. A preferência é salva localmente quando o navegador permite.
+- Cena inicial curta: ajuste dos óculos e aceno.
+- Clique em **Dê um oi** ou no personagem: aceno, joinha e piscada em sequência.
+- Ao selecionar projeto, o personagem aponta e o pequeno guia apresenta uma dica.
+- Ao alternar tema, há um gesto de interruptor e uma nova saudação.
+- No contato, uma versão sentada trabalha à bancada. Cinco cliques no monograma **bd.** revelam a captura de um bug ilustrativo.
 
-As bibliotecas são carregadas sob demanda, por versões fixas via jsDelivr. O conteúdo e os controles essenciais continuam funcionando se o CDN falhar. Nenhuma conta ou chave é necessária para as animações.
+## Transições
 
-## Acessibilidade e desempenho
+Canvas 2D desenha contornos metálicos deformáveis. O ponteiro altera sua aparência e o toque produz ondas. É um efeito visual procedural, não um solver físico de fluidos.
 
-O botão **Pausar** interrompe o Canvas, o rig do personagem, animações CSS, animações nativas e os efeitos GSAP/Lenis. A preferência `prefers-reduced-motion` é respeitada na inicialização. Projetos têm semântica de tabs e navegação por setas, Home e End. O site inclui link para pular navegação, foco visível e menu móvel.
+A troca de tema usa `document.startViewTransition`, quando suportado, com expansão circular partindo do botão. O título do projeto se desloca até a janela de experiência e retorna ao fechamento em telas maiores, quando ambos estão visíveis. Sem suporte ou com movimento reduzido, a mudança é direta.
 
-Canvas e personagem param fora da área visível e em aba oculta. A resolução do Canvas é limitada a DPR 1.5 e sua atualização em dispositivos de toque é reduzida. O site não inclui analytics nem rastreadores próprios; o CDN recebe as requisições normais de carregamento de bibliotecas.
+GSAP 3.13.0, ScrollTrigger e Lenis 1.3.11 são complementos opcionais, carregados por versão fixa. Revelações, conteúdo, controles e demos funcionam sem CDN. Lenis é reservado a dispositivos com mouse; o modal e o toque usam rolagem nativa.
 
-## Verificação feita
+## Modo engenheiro
 
-A edição foi testada localmente com Chromium/Playwright em 1440px e 390px: temas, aceno, pausa, tabs por clique e teclado, acordeões, menu móvel, fluxo visual Wallet e ausência de rolagem horizontal em 390px. A execução local bloqueou os CDNs intencionalmente para testar a alternativa nativa; essa verificação não equivale a uma execução completa das bibliotecas externas. Os arquivos enviados ao GitHub foram comparados pelos hashes de blobs com os arquivos testados.
+Cada uma das seis experiências inclui:
 
-## Publicação
+1. Demonstração de interface com dados fictícios.
+2. Fluxo conceitual com componentes selecionáveis, operação normal, timeout antes da gravação, retry e reenvio da mesma chave.
+3. Texto de problema, decisão demonstrada e limite/compromisso.
 
-Manter o método já configurado: GitHub Pages, branch `main`, pasta `/ (root)`. O diretório `google-wallet/` permanece no repositório. O cartão animado na home é ilustrativo, não chama a API e não emite passes reais.
+A trilha é ilustrativa. Não mede a produção, não inspeciona o código privado e não deve ser interpretada como garantia de arquitetura ou benchmark.
 
-## Referências das bibliotecas
+## Acessibilidade
+
+- Link para pular navegação, foco visível e menu móvel.
+- Tabs com seleção por clique e teclado, setas, Home e End.
+- Dialog nativo com Escape e restauração do foco.
+- O botão **Pausar** interrompe animações decorativas, Canvas, poses e melhorias de rolagem.
+- `prefers-reduced-motion` tem prioridade, inclusive quando a preferência muda durante a visita.
+- Operações das demos continuam utilizáveis sem movimento. Suas mensagens de estado não dependem só de cor.
+- Conteúdo não fica oculto se JavaScript ou CDN não carregar.
+
+## Desempenho e privacidade
+
+Canvas tem DPR limitado a 1.5 e taxa reduzida em toque. Efeitos contínuos param fora da área visível, em aba oculta e atrás do modal. Ao fechar ou trocar uma demo, seus temporizadores são cancelados e seu estado é descartado.
+
+Não há backend para as demos. Nenhuma resposta, voto, tarefa ou cartão é enviado a APIs. O Wallet da home não assina JWTs e não emite passes. Os canais de contato usam apenas o GitHub confirmado; compartilhamento usa Web Share ou clipboard com alternativa textual.
+
+## Capa social
+
+A capa 1200 × 630 contém o nome, cargo e o mesmo personagem vetorial. `scripts/render-cover.cjs` gera a fonte SVG. Um renderizador SVG pode convertê-la para PNG; a imagem final é referenciada nos metadados Open Graph. A atualização de previews em redes sociais depende do cache de cada plataforma.
+
+## Referências oficiais
 
 - GSAP: https://gsap.com/docs/v3/
 - ScrollTrigger: https://gsap.com/docs/v3/Plugins/ScrollTrigger/
 - Lenis: https://github.com/darkroomengineering/lenis
+- View Transitions: https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition
 
-A ilustração do personagem foi fornecida pelo titular do site; sua inclusão não concede automaticamente licença de redistribuição a terceiros.
+O escopo e as limitações dos testes estão em [TESTING.md](TESTING.md).

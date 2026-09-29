@@ -2,94 +2,126 @@
 <html lang="pt-BR" data-theme="dark" data-motion="on">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Beto Delazane — Senior Software Engineer. Arquitetura, produtos digitais e experimentos interativos.">
-  <meta name="theme-color" content="#090909">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Beto Delazane · Senior Software Engineer. Experimente sistemas, explore decisões técnicas e conheça o lado humano do código.">
+  <meta name="theme-color" content="#0b0b0b">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="Beto Delazane · Senior Software Engineer">
-  <meta property="og:description" content="Engenharia com estrutura. Experiências com personalidade.">
+  <meta property="og:description" content="Estrutura por dentro. Personalidade por fora. Um portfólio para experimentar.">
+  <meta property="og:url" content="https://betodelazaneupper.github.io/Publicos/">
+  <meta property="og:image" content="https://betodelazaneupper.github.io/Publicos/assets/social-cover.png">
+  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Beto Delazane, Senior Software Engineer, acompanhado de seu personagem ilustrado.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://betodelazaneupper.github.io/Publicos/">
   <title>Beto Delazane · Senior Software Engineer</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=motion-1">
+  <link rel="stylesheet" href="./styles.css?v=studio-2-final">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <script>try{let t=localStorage.getItem('portfolio-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;if(localStorage.getItem('portfolio-motion')==='off')document.documentElement.dataset.motion='off'}catch(e){}if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.dataset.motion='off'</script>
-  <script defer src="./fluid.js?v=motion-1"></script>
-  <script defer src="./script.js?v=motion-1"></script>
+  <script>try{const t=localStorage.getItem('portfolio-theme');if(['light','dark'].includes(t))document.documentElement.dataset.theme=t;if(localStorage.getItem('portfolio-motion')==='off')document.documentElement.dataset.motion='off'}catch{}if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.dataset.motion='off';</script>
+  <script defer src="./character.js?v=studio-2-final"></script>
+  <script defer src="./demos.js?v=studio-2-final"></script>
+  <script defer src="./fluid.js?v=studio-2-final"></script>
+  <script defer src="./script.js?v=studio-2-final"></script>
 </head>
 <body>
 <a class="skip" href="#main">Pular para o conteúdo</a>
-<div class="scroll-progress" aria-hidden="true"><i id="pageProgress"></i></div>
+<div class="reading-progress" aria-hidden="true"><i id="pageProgress"></i></div>
 <header class="header">
-  <a class="brand" href="#top" aria-label="Beto Delazane, início"><span class="brand-icon">b<span>.</span>d</span><span class="brand-name">Beto Delazane<small>Software Engineer</small></span></a>
-  <nav class="nav" aria-label="Principal"><a href="#work" data-magnetic>Projetos</a><a href="#practice" data-magnetic>Engenharia</a><a href="#lab" data-magnetic>Laboratório</a></nav>
-  <div class="tools"><button id="motionToggle" class="tool" type="button" aria-pressed="true" aria-label="Pausar animações"><span id="motionIcon" aria-hidden="true">Ⅱ</span><span class="tool-label" id="motionLabel">Pausar</span></button><button id="themeToggle" class="tool theme-tool" type="button" aria-label="Ativar tema claro"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 5a7 7 0 0 1 0 14Z" fill="currentColor"/></svg><span class="tool-label" id="themeLabel">Claro</span></button><button id="menuToggle" class="tool menu-toggle" type="button" aria-expanded="false" aria-controls="mobileNav">Menu <span aria-hidden="true">＋</span></button></div>
+  <a class="brand" href="#top" aria-label="Beto Delazane, início"><span class="brand-mark">bd<span>.</span></span><span>Beto Delazane<small>Senior Software Engineer</small></span></a>
+  <nav class="nav" aria-label="Navegação principal"><a href="#work">Projetos</a><a href="#practice">Engenharia</a><a href="#lab">Lab</a><a href="#contact">Contato</a></nav>
+  <div class="header-tools">
+    <button id="engineerShortcut" class="tool code-tool" aria-label="Abrir modo engenheiro" type="button">&lt;/&gt;</button>
+    <button id="motionToggle" class="tool" type="button" aria-label="Pausar animações" aria-pressed="true"><span id="motionIcon" aria-hidden="true">Ⅱ</span><span class="tool-text" id="motionLabel">Pausar</span></button>
+    <button id="themeToggle" class="tool" type="button" aria-label="Ativar tema claro"><span class="theme-icon" aria-hidden="true">◐</span><span class="tool-text" id="themeLabel">Claro</span></button>
+    <button id="menuToggle" class="tool menu-toggle" type="button" aria-expanded="false" aria-controls="mobileNav">Menu <span aria-hidden="true">＋</span></button>
+  </div>
   <nav id="mobileNav" class="mobile-nav" aria-label="Navegação móvel" hidden><a href="#work">Projetos</a><a href="#practice">Engenharia</a><a href="#lab">Laboratório</a><a href="#contact">Contato</a></nav>
 </header>
 <main id="main">
-<section class="hero shell" id="top" aria-labelledby="heroTitle">
-  <div class="edition"><span>PORTFÓLIO PESSOAL / 2026</span><span class="edition-right">CÓDIGO. PRODUTO. MOVIMENTO.<i class="live-dot"></i></span></div>
-  <div class="hero-grid">
-    <div class="hero-copy"><p class="eyebrow hero-intro"><span class="small-line"></span> SENIOR SOFTWARE ENGINEER</p><h1 id="heroTitle"><span class="name-line"><span>Beto</span></span><span class="name-line"><span class="surname">Delazane<span class="name-dot">.</span></span></span></h1><p class="hero-note">Engenharia com estrutura.<br><span>Experiências com personalidade.</span></p><p class="hero-description">Do domínio ao detalhe da interface. Construo sistemas, conecto ideias e deixo espaço para experimentar.</p><div class="hero-actions"><a class="button primary" href="#work" data-magnetic><span>Explorar projetos</span><span class="button-arrow">↘</span></a><a class="quiet-link" href="https://github.com/BetoDelazaneUpper" target="_blank" rel="noopener noreferrer">Meu GitHub <span>↗</span></a></div></div>
-    <div class="hero-art" id="heroArt">
-      <span class="art-coordinate coord-top">FIG. 01 — O LADO HUMANO DO CÓDIGO</span>
-      <canvas id="heroFluid" aria-hidden="true"></canvas>
-      <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
-      <span class="floating-tag tag-one" aria-hidden="true">&lt;hello /&gt;</span><span class="floating-tag tag-two" aria-hidden="true">.NET</span><span class="floating-tag tag-three" aria-hidden="true">{ ideias }</span>
-      <div class="greeting" id="greeting"><span class="greeting-label">BETO, EM VERSÃO ILUSTRADA</span><strong id="greetingText">Oi! Bom te ver aqui.</strong><span class="greeting-tail" aria-hidden="true"></span></div>
-      <button class="character-button" id="characterButton" type="button" aria-label="Fazer o personagem do Beto acenar">
-        <svg class="character" viewBox="-25 -20 270 355" role="img" aria-labelledby="mascotTitle">
-          <title id="mascotTitle">Personagem da ilustração enviada por Beto, de óculos e cabelo curto, acenando.</title>
-          <defs>
-            <image id="characterSource" href="./assets/beto.webp" width="218" height="312"/>
-            <clipPath id="headClip"><path d="M47 71L50 68 47 57 45 46 47 32 49 25 52 20 55 16 63 10 70 7 80 3 87 4 96 0 102 3 109 2 113 4 120 4 122 8 127 9 127 13 132 16 134 26 136 40 136 59 140 62 142 68 141 75 136 81 134 93 129 106 121 114 112 120 111 126 112 133 101 137 89 134 87 125 76 120 65 113 59 105 56 95 55 90 51 90 49 86 46 76Z"/></clipPath>
-            <clipPath id="bodyClip"><path d="M86 128L95 134 105 135 113 128 133 131 154 153 141 168 133 161 135 202 136 209 80 212 78 207 78 164 70 175 54 165 69 136Z"/><path d="M79 207L135 205 137 247 140 272 134 277 135 280 141 278 144 281 142 286 151 287 156 291 157 297 155 301 148 303 123 302 122 296 122 286 125 283 122 278 119 278 115 263 107 228 101 263 101 272 97 278 96 283 98 289 100 296 99 301 94 303 78 304 70 305 66 303 65 298 68 292 77 287 78 282 83 280 84 277 80 276 79 272Z"/></clipPath>
-            <clipPath id="leftArmClip"><path d="M61 167L69 174 62 185 58 187 53 187 47 184 38 177 33 173 28 172 25 172 22 169 19 164 19 161 22 160 21 157 24 155 23 151 26 149 29 153 29 148 32 146 35 151 35 146 38 145 41 153 43 152 46 153 47 157 45 165 47 168 55 173Z"/></clipPath>
-            <clipPath id="rightArmClip"><path d="M145 155L156 165 166 153 168 150 166 144 165 138 167 135 170 137 173 140 176 132 178 129 181 130 181 135 184 131 187 132 187 137 190 136 191 139 188 143 191 143 192 146 188 150 184 153 177 156 174 155 169 163 162 173 156 178 149 177 142 172 136 166Z"/></clipPath>
-          </defs>
-          <g class="mascot-rig" id="mascotRig">
-            <g id="mascotLeftArm"><use href="#characterSource" clip-path="url(#leftArmClip)"/></g>
-            <g id="mascotRightArm"><use href="#characterSource" clip-path="url(#rightArmClip)"/></g>
-            <use href="#characterSource" clip-path="url(#bodyClip)"/>
-            <g id="mascotHead"><use href="#characterSource" clip-path="url(#headClip)"/></g>
-          </g>
-        </svg>
-      </button>
-      <div class="character-floor" aria-hidden="true"></div>
-      <button id="waveButton" class="wave-button" type="button" data-magnetic><span aria-hidden="true">✳</span> Dê um oi <span aria-hidden="true">↗</span></button>
-      <span class="art-coordinate coord-bottom"><span class="crosshair" aria-hidden="true">＋</span> MOVA O MOUSE. TOQUE. EXPLORE.</span>
+  <section class="hero shell" id="top" aria-labelledby="heroTitle">
+    <div class="edition"><span>PORTFÓLIO PESSOAL / VOL. 02</span><span>ENGENHARIA EM MOVIMENTO <i class="status-dot" aria-hidden="true"></i></span></div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow hero-intro"><i class="small-rule" aria-hidden="true"></i> SENIOR SOFTWARE ENGINEER</p>
+        <h1 id="heroTitle"><span class="name-line"><span>Beto</span></span><span class="name-line"><span class="surname">Delazane<span class="name-dot">.</span></span></span></h1>
+        <p class="hero-note">Engenharia com estrutura.<br><span>Experiências com personalidade.</span></p>
+        <p class="hero-desc">Construo sistemas. Conecto ideias.<br>Mas prefiro que você experimente.</p>
+        <div class="hero-actions"><a href="#work" class="button primary" data-magnetic>Explorar projetos <span>↘</span></a><button class="quiet-link" id="heroEngineer" type="button">Ver por dentro <span>&lt;/&gt;</span></button></div>
+        <div class="hero-signature"><span class="signature-line"></span><span>CÓDIGO SÉRIO.<br>UM POUCO DE DIVERSÃO.</span></div>
+      </div>
+      <div class="hero-art" id="heroArt">
+        <span class="art-coordinate coord-top">FIG. 01 / O LADO HUMANO DO CÓDIGO</span>
+        <canvas id="heroFluid" aria-hidden="true"></canvas>
+        <div class="art-ring" aria-hidden="true"></div><div class="art-axis" aria-hidden="true"></div>
+        <span class="floating-label label-a" aria-hidden="true">&lt;hello /&gt;</span><span class="floating-label label-b" aria-hidden="true">.NET</span>
+        <div class="greeting"><span>BETO, EM VERSÃO ILUSTRADA</span><strong id="greetingText" role="status">Oi! Bom te ver aqui.</strong></div>
+        <button id="heroMascot" class="hero-mascot" data-mascot="standing" data-pose="rest" data-wave type="button" aria-label="Interagir com o personagem do Beto"></button>
+        <div id="artSwitch" class="art-switch" aria-hidden="true"><i></i><span>LIGHT</span></div>
+        <div class="mascot-floor" aria-hidden="true"></div>
+        <button class="wave-button" type="button" data-wave data-magnetic>✳ <span>Dê um oi</span> ↗</button>
+        <span class="art-coordinate coord-bottom"><span aria-hidden="true">＋</span> MOVA O MOUSE. TOQUE. EXPLORE.</span>
+      </div>
     </div>
-  </div>
-  <div class="hero-bottom"><a href="#work" class="scroll-cue"><span class="scroll-cue-icon" aria-hidden="true">↓</span> UM POUCO DO QUE EU CONSTRUO</a><span class="hero-bottom-note">Design em movimento.<br>Código com propósito.</span></div>
-</section>
-<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>SOFTWARE</span><i>✳</i><span class="outline-text">SISTEMAS</span><i>✳</i><span>IDEIAS EM MOVIMENTO</span><i>✳</i><span>SOFTWARE</span><i>✳</i><span class="outline-text">SISTEMAS</span><i>✳</i><span>IDEIAS EM MOVIMENTO</span><i>✳</i></div></div>
-<section class="section shell" id="work" aria-labelledby="workTitle">
-  <div class="section-top reveal"><p class="eyebrow">01 / PROJETOS SELECIONADOS</p><span class="micro">CÓDIGO PRIVADO. VISÃO PÚBLICA.</span></div>
-  <div class="section-heading reveal"><h2 id="workTitle">Problemas diferentes.<br><span class="muted">A mesma curiosidade.</span></h2><p>Uma seleção de produtos, plataformas e ferramentas. Escolha um projeto para explorar sua arquitetura.</p></div>
-  <div class="work-grid">
-    <div class="project-list reveal" role="tablist" aria-label="Escolher projeto" aria-orientation="vertical">
-      <button id="tab-agenda" role="tab" aria-selected="true" aria-controls="projectPanel" tabindex="0" class="project-row active" data-project="agenda"><span class="project-number">01</span><span class="project-name">Projeto Agenda<small>SaaS / Multi-tenant</small></span><span class="row-arrow">↗</span></button>
-      <button id="tab-magicdev" role="tab" aria-selected="false" aria-controls="projectPanel" tabindex="-1" class="project-row" data-project="magicdev"><span class="project-number">02</span><span class="project-name">MagicDev<small>Agentes / Tempo real</small></span><span class="row-arrow">↗</span></button>
-      <button id="tab-pickside" role="tab" aria-selected="false" aria-controls="projectPanel" tabindex="-1" class="project-row" data-project="pickside"><span class="project-number">03</span><span class="project-name">PickSide<small>Produto / Pagamentos</small></span><span class="row-arrow">↗</span></button>
-      <button id="tab-mapa" role="tab" aria-selected="false" aria-controls="projectPanel" tabindex="-1" class="project-row" data-project="mapa"><span class="project-number">04</span><span class="project-name">Mapa da Percepção<small>Dados / Relatórios</small></span><span class="row-arrow">↗</span></button>
-      <button id="tab-beto" role="tab" aria-selected="false" aria-controls="projectPanel" tabindex="-1" class="project-row" data-project="beto"><span class="project-number">05</span><span class="project-name">Beto<small>Plataforma / Gamificação</small></span><span class="row-arrow">↗</span></button>
+    <div class="hero-bottom"><a href="#work"><span class="scroll-mark" aria-hidden="true">↓</span> UM POUCO DO QUE EU CONSTRUO</a><span>DESENHADO PARA EXPLORAR.<br>CONSTRUÍDO PARA FAZER SENTIDO.</span></div>
+  </section>
+  <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>SOFTWARE</span><i>✳</i><span class="outline-text">SISTEMAS</span><i>✳</i><span>IDEIAS EM MOVIMENTO</span><i>✳</i><span>SOFTWARE</span><i>✳</i><span class="outline-text">SISTEMAS</span><i>✳</i><span>IDEIAS EM MOVIMENTO</span><i>✳</i></div></div>
+  <section class="section shell" id="work" aria-labelledby="workTitle">
+    <div class="section-top reveal"><p class="eyebrow">01 / PROJETOS PARA EXPERIMENTAR</p><span class="micro">CÓDIGO PRIVADO. VISÃO PÚBLICA.</span></div>
+    <div class="section-heading reveal"><h2 id="workTitle">Não só olhar.<br><span class="muted">Colocar a mão.</span></h2><p>Demonstrações criadas para este portfólio.<br>Dados fictícios, decisões reais para discutir.<br><strong>Nenhuma conexão com os sistemas privados.</strong></p></div>
+    <div class="work-grid">
+      <div class="project-list reveal" role="tablist" aria-label="Escolher projeto" aria-orientation="vertical">
+        <button id="tab-agenda" role="tab" aria-selected="true" aria-controls="projectPanel" tabindex="0" class="project-row active" data-project="agenda"><span>01</span><span class="project-name">Projeto Agenda<small>SaaS / Multi-tenant</small></span><b aria-hidden="true">↗</b></button>
+        <button id="tab-magicdev" role="tab" aria-selected="false" aria-controls="projectPanel" tabindex="-1" class="project-row" data-project="magicdev"><span>02</span><span class="project-name">MagicDev<small>Agentes / Tempo real</small></span><b aria-hidden="true">↗</b></button>
+        <button id="tab-pickside" role="tab" aria-selected="false" aria-controls="projectPanel" tabindex="-1" class="project-row" data-project="pickside"><span>03</span><span class="project-name">PickSide<small>Produto / Pagamentos</small></span><b aria-hidden="true">↗</b></button>
+        <button id="tab-mapa" role="tab" aria-selected="false" aria-controls="projectPanel" tabindex="-1" class="project-row" data-project="mapa"><span>04</span><span class="project-name">Mapa da Percepção<small>Dados / Relatórios</small></span><b aria-hidden="true">↗</b></button>
+        <button id="tab-beto" role="tab" aria-selected="false" aria-controls="projectPanel" tabindex="-1" class="project-row" data-project="beto"><span>05</span><span class="project-name">Beto<small>Plataforma / Gamificação</small></span><b aria-hidden="true">↗</b></button>
+        <button id="tab-wallet" role="tab" aria-selected="false" aria-controls="projectPanel" tabindex="-1" class="project-row" data-project="wallet"><span>06</span><span class="project-name">Google Wallet Lab<small>Experimento / Público</small></span><b aria-hidden="true">↗</b></button>
+      </div>
+      <article class="project-panel reveal" id="projectPanel" role="tabpanel" aria-labelledby="tab-agenda" tabindex="0">
+        <div class="panel-top"><span id="detailIndex">01 / 06</span><span>LABORATÓRIO LOCAL</span><i class="status-dot" aria-hidden="true"></i></div>
+        <div class="mini-guide"><div data-mascot="guide" data-pose="rest" id="guideMascot" aria-hidden="true"></div><p id="guideText">A interface conta uma parte.<br>O sistema conta o resto.</p><span aria-hidden="true">↙</span></div>
+        <div class="panel-copy"><p class="micro" id="detailKind">SaaS / Multi-tenant</p><h3 id="detailTitle">Projeto Agenda</h3><p id="detailDescription">Reservas configuráveis. Um mesmo produto, contextos diferentes.</p><div class="detail-tags" id="detailTags"><span>.NET</span><span>React</span><span>PostgreSQL</span></div></div>
+        <div class="preview-system" id="previewSystem" aria-label="Diagrama conceitual"><span>Interface</span><i aria-hidden="true">→</i><span>API</span><i aria-hidden="true">→</i><span>Worker</span><i aria-hidden="true">→</i><span>Banco</span></div>
+        <div class="panel-actions"><button class="button primary" id="openExperience" type="button">Experimentar projeto <span>↗</span></button><button class="quiet-link" id="openArchitecture" type="button">Ver por dentro &lt;/&gt;</button></div>
+        <p class="panel-disclaimer">DEMO DIDÁTICA · SEM DADOS REAIS · REINICIA AO FECHAR</p>
+      </article>
     </div>
-    <article class="project-panel reveal" id="projectPanel" role="tabpanel" tabindex="0" aria-labelledby="tab-agenda">
-      <div class="panel-top"><span id="detailIndex">01 / 05</span><span>MAPA DO SISTEMA</span><span class="live-dot"></span></div>
-      <div class="system-map" aria-hidden="true"><div class="system-node" id="mapClient">Web</div><div class="system-connector"><i></i><b></b></div><div class="system-node node-core" id="mapCore">API + Worker</div><div class="system-connector"><i></i><b></b></div><div class="system-node" id="mapData">PostgreSQL</div><span class="map-caption">DIAGRAMA CONCEITUAL · NÃO É UMA TELA DO PRODUTO</span></div>
-      <div class="detail-copy"><p class="micro" id="detailKind">PLATAFORMA SAAS</p><h3 id="detailTitle">Projeto Agenda</h3><p id="detailDescription">Plataforma white-label e multi-tenant para reservas configuráveis, organizada em módulos com API, worker e frontend.</p><div class="detail-tags" id="detailTags"><span>.NET 10</span><span>React</span><span>PostgreSQL</span><span>Docker</span></div><div class="detail-focus"><span>ÊNFASE</span><p id="detailFocus">Multi-tenancy, domínio e testes.</p></div></div>
-    </article>
-  </div>
-</section>
-<section class="statement" aria-label="Manifesto"><div class="shell"><p class="eyebrow reveal">PENSAR BEM. CONSTRUIR MELHOR.</p><p class="statement-text" id="statementText">Estrutura por dentro.<br><span>Personalidade</span> por fora.</p><svg class="statement-star" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0V100M0 50H100M14.6 14.6L85.4 85.4M14.6 85.4L85.4 14.6" fill="none" stroke="currentColor" stroke-width="9"/></svg></div></section>
-<section class="section shell" id="practice" aria-labelledby="practiceTitle">
-  <div class="section-top reveal"><p class="eyebrow">02 / PRÁTICA DE ENGENHARIA</p><span class="micro">MENOS RUÍDO. MAIS INTENÇÃO.</span></div>
-  <div class="practice-grid"><div class="practice-intro reveal"><h2 id="practiceTitle">Software que<br>aguenta <em>mudança.</em></h2><p>Clareza nas decisões. Cuidado nas interfaces. Um sistema precisa fazer sentido tanto para quem usa quanto para quem o mantém.</p><div class="stack-notes"><span>.NET</span><span>TypeScript</span><span>React</span><span>PostgreSQL</span><span>Node.js</span><span>Docker</span></div></div>
-  <div class="principles reveal"><details open><summary><span>01</span><h3>Arquitetura é contexto.</h3><b aria-hidden="true">＋</b></summary><p>Limites claros, módulos coesos e escolhas proporcionais ao problema. A ferramenta serve ao produto, não o contrário.</p></details><details><summary><span>02</span><h3>O deploy não é o fim.</h3><b aria-hidden="true">＋</b></summary><p>Testes, observabilidade, migrações e recuperação fazem parte do desenho. Operar é parte de desenvolver.</p></details><details><summary><span>03</span><h3>Segurança desde o início.</h3><b aria-hidden="true">＋</b></summary><p>Privilégios mínimos, validação no servidor e credenciais fora do código público. Fronteiras explícitas antes de atalhos.</p></details><details><summary><span>04</span><h3>Interfaces têm personalidade.</h3><b aria-hidden="true">＋</b></summary><p>Movimento dá contexto, feedback e ritmo. A interação deve continuar clara com teclado, toque ou animações desligadas.</p></details></div></div>
-</section>
-<section class="section lab-section" id="lab" aria-labelledby="labTitle"><div class="shell"><div class="section-top reveal"><p class="eyebrow">03 / LABORATÓRIO ABERTO</p><span class="micro">EXPERIMENTOS QUE VIRAM REFERÊNCIA.</span></div><div class="lab-grid"><div class="lab-copy reveal"><div class="lab-stamp" aria-hidden="true">GW / 01</div><h2 id="labTitle">Google Wallet.<br><span class="muted">Do código ao passe.</span></h2><p>Um exemplo de Generic Pass em Node.js, com JWT assinado no backend. Documentação aberta, credenciais fora do navegador.</p><div class="lab-links"><a class="button primary" href="./google-wallet/" data-magnetic><span>Explorar o laboratório</span><span class="button-arrow">↗</span></a><a class="quiet-link" href="https://github.com/BetoDelazaneUpper/Publicos/tree/main/google-wallet/example" target="_blank" rel="noopener noreferrer">Ver o código ↗</a></div></div><div class="pass-scene reveal"><div class="pass-orbit" aria-hidden="true"></div><div class="wallet-pass" id="walletPass"><div class="pass-top"><span>BD / LAB</span><span>GENERIC PASS</span></div><div class="pass-body"><span class="pass-symbol" aria-hidden="true">✳</span><h3>Beto Delazane</h3><p>Senior Software Engineer</p></div><div class="pass-bottom"><span>ILUSTRAÇÃO DO FLUXO</span><span>01 / 03</span></div></div><div class="lab-step-text"><strong id="labStepTitle">01 — O navegador solicita.</strong><p id="labStepText">O backend recebe o pedido para preparar o passe.</p></div><button class="flow-button" id="flowButton" type="button">Próxima etapa <span aria-hidden="true">→</span></button><p class="lab-caption">Demonstração visual. Não emite um passe real.</p></div></div></div></section>
-<section class="contact section shell" id="contact" aria-labelledby="contactTitle"><div class="section-top reveal"><p class="eyebrow">04 / A PRÓXIMA CONVERSA</p><span class="micro">COMEÇA COM UM OI.</span></div><div class="contact-grid"><h2 id="contactTitle" class="reveal">Boas ideias<br>merecem <em>código.</em></h2><div class="contact-actions reveal"><p>Conheça os projetos públicos, explore os experimentos ou simplesmente dê mais um oi.</p><a class="contact-link" href="https://github.com/BetoDelazaneUpper" target="_blank" rel="noopener noreferrer"><span>Vamos pelo GitHub</span><b>↗</b></a><button id="footerWave" class="contact-link" type="button"><span>Chamar o Beto ilustrado</span><b>✳</b></button></div></div><div class="footer-signature" aria-hidden="true">Beto Delazane<span>↗</span></div></section>
+  </section>
+  <section class="manifesto" aria-labelledby="manifestoTitle"><div class="shell"><span class="eyebrow reveal">PENSAR BEM. CONSTRUIR MELHOR.</span><h2 id="manifestoTitle">Estrutura por dentro.<br><span>Personalidade</span> por fora.</h2><span class="manifesto-mark" aria-hidden="true">✳</span></div></section>
+  <section class="section shell" id="practice" aria-labelledby="practiceTitle">
+    <div class="section-top reveal"><p class="eyebrow">02 / PRÁTICA DE ENGENHARIA</p><span class="micro">O PORQUÊ TAMBÉM É PARTE DO CÓDIGO.</span></div>
+    <div class="practice-grid"><div class="practice-copy reveal"><h2 id="practiceTitle">Software que<br>aguenta <em>mudança.</em></h2><p>Prefiro decisões que se explicam, estados que não surpreendem e sistemas que continuam compreensíveis depois de crescer.</p><button class="quiet-link" id="practiceEngineer" type="button">Explore uma falha controlada <span>↗</span></button></div><div class="principles reveal">
+      <details open><summary><span>01</span>O problema antes do framework.<b aria-hidden="true">＋</b></summary><p>Domínio, limites e compromissos antes da escolha de ferramentas. Na demo de Agenda, uma reserva deixa clara a regra de unicidade.</p></details>
+      <details><summary><span>02</span>Operação faz parte do produto.<b aria-hidden="true">＋</b></summary><p>Um caminho feliz não conta a história toda. No modo engenheiro, injete um timeout, acompanhe o retry e observe o efeito da idempotência.</p></details>
+      <details><summary><span>03</span>Intenção não é autorização.<b aria-hidden="true">＋</b></summary><p>Antes de agir, valide contexto e permissão. Na demo de MagicDev, a tarefa espera uma aprovação explícita antes da execução simulada.</p></details>
+      <details><summary><span>04</span>Interfaces que se explicam.<b aria-hidden="true">＋</b></summary><p>Feedback claro, navegação por teclado e movimento opcional. Aqui você pode pausar os efeitos sem perder acesso às experiências.</p></details>
+    </div></div>
+    <div class="stack-ledger reveal"><div><span>BACKEND</span><strong>.NET / Node.js</strong></div><div><span>INTERFACES</span><strong>React / Next.js</strong></div><div><span>DADOS</span><strong>PostgreSQL / SQL Server</strong></div><div><span>CONEXÕES</span><strong>APIs / WebSocket</strong></div></div>
+  </section>
+  <section class="lab-section" id="lab" aria-labelledby="labTitle"><div class="section shell">
+    <div class="section-top reveal"><p class="eyebrow">03 / GOOGLE WALLET LAB</p><span class="micro">UMA IDEIA. DUAS CAMADAS.</span></div>
+    <div class="lab-grid"><div class="lab-copy reveal"><h2 id="labTitle">Um passe por fora.<br><span class="muted">Um objeto por dentro.</span></h2><p>Mude o nome, o título e o acabamento. Alterne entre a prévia do cartão e o JSON que a descreve. Sem chave privada no navegador.</p><button class="button primary" id="walletDemo" type="button" data-magnetic>Personalizar meu passe <span>↗</span></button><div class="lab-links"><a class="quiet-link" href="./google-wallet/">Documentação ↗</a><a class="quiet-link" href="https://github.com/BetoDelazaneUpper/Publicos/tree/main/google-wallet/example" target="_blank" rel="noopener noreferrer">Exemplo Node.js ↗</a></div><p class="micro">A PRÉVIA NÃO EMITE PASSES. O EXEMPLO REAL EXIGE BACKEND E ISSUER.</p></div>
+      <div class="wallet-sculpture reveal" aria-hidden="true"><div class="pass-outline"></div><div class="display-pass"><div><span class="brand-mark">bd.</span><span>WALLET LAB / 01</span></div><p>Engineering<br>with personality.</p><div class="display-pass-bottom"><span>BETO DELAZANE<br><small>SENIOR SOFTWARE ENGINEER</small></span><b>↗</b></div></div><span class="wallet-coordinate">APARÊNCIA ↔ ESTRUTURA</span></div>
+    </div>
+  </div></section>
+  <section class="section shell contact-section" id="contact" aria-labelledby="contactTitle">
+    <div class="section-top reveal"><p class="eyebrow">04 / PRÓXIMA CONVERSA</p><span class="micro">MAIS PESSOA. MENOS TEMPLATE.</span></div>
+    <div class="contact-grid"><div class="desk-scene reveal"><div data-mascot="seated" data-pose="rest" id="deskMascot" aria-hidden="true"></div><span class="desk-caption">UM CAFÉ. UM PROBLEMA INTERESSANTE.</span><span id="tinyBug" class="tiny-bug" aria-hidden="true">⌘</span><div class="bug-net" aria-hidden="true"></div></div><div class="contact-copy reveal"><h2 id="contactTitle">Tem um problema<br><em>interessante</em><br>para resolver?</h2><p>Vamos conversar sobre o sistema por trás da ideia.</p><a class="button primary" href="https://github.com/BetoDelazaneUpper" target="_blank" rel="noopener noreferrer">Encontrar no GitHub <span>↗</span></a><button class="quiet-link" id="sharePortfolio" type="button">Compartilhar portfólio <span>↑</span></button><p class="contact-status" id="shareStatus" role="status"></p></div></div>
+    <div class="signature-strip"><button id="debugMark" class="signature-button" type="button" aria-label="Explorar o monograma BD">bd.</button><p>Construir é levar a sério.<br><span>Explorar é não perder a curiosidade.</span></p><p class="micro easter-hint" id="bugStatus" role="status">TODO BOM SISTEMA TEM UMA SURPRESA.</p></div>
+  </section>
 </main>
-<footer class="footer shell"><span>© <span id="year">2026</span> Beto Delazane</span><a href="https://github.com/BetoDelazaneUpper/Publicos" target="_blank" rel="noopener noreferrer">Código do site ↗</a><span>Engenharia, com um toque humano.</span></footer>
-<button id="mascotDock" class="mascot-dock" type="button" aria-label="Chamar o personagem do Beto" hidden><span aria-hidden="true">BD</span><span>Diga oi <b>✳</b></span></button>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<footer class="footer shell"><span>© 2026 Beto Delazane</span><span>Senior Software Engineer</span><a href="#top">De volta ao início ↑</a></footer>
+<dialog id="experience" class="experience" aria-labelledby="experienceTitle" aria-describedby="experienceNotice" data-lenis-prevent>
+  <div class="experience-shell">
+    <header class="experience-header"><div><span class="micro" id="experienceLabel">PROJETO / DEMO</span><h2 id="experienceTitle">Projeto Agenda</h2></div><button class="close-button" id="closeExperience" type="button" aria-label="Fechar experiência">Fechar <span aria-hidden="true">×</span></button></header>
+    <p class="experience-notice" id="experienceNotice">Ambiente fictício e local. Não acessa produtos privados, não cobra e não envia dados.</p>
+    <div class="experience-toolbar"><div role="tablist" aria-label="Camada da experiência" class="experience-tabs"><button role="tab" id="view-experience" data-view="experience" aria-selected="true" aria-controls="demoHost" tabindex="0">Experimentar</button><button role="tab" id="view-engineer" data-view="engineer" aria-selected="false" aria-controls="demoHost" tabindex="-1">Modo engenheiro &lt;/&gt;</button><button role="tab" id="view-decisions" data-view="decisions" aria-selected="false" aria-controls="demoHost" tabindex="-1">Decisões</button></div><button class="quiet" id="resetDemo" type="button">Reiniciar ↻</button></div>
+    <div id="demoHost" role="tabpanel" aria-labelledby="view-experience" tabindex="0"></div>
+    <footer class="experience-footer"><span>ISOLADO DO PRODUTO REAL</span><span>FECHAR OU TROCAR DE CAMADA REINICIA OS DADOS</span></footer>
+  </div>
+</dialog>
+<noscript><div class="no-script shell">O conteúdo e os links estão disponíveis. Ative JavaScript para experimentar as demos e os controles de animação.</div></noscript>
 </body>
 </html>
